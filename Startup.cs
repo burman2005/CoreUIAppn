@@ -37,6 +37,9 @@ namespace CoreUIAppn
             //Add framework services
             services.AddDbContext<MeetingContext>(options =>
                  options.UseSqlServer(Configuration.GetConnectionString("MeetingConnection")));
+
+            // Register the Swagger services
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,7 +72,11 @@ namespace CoreUIAppn
                 app.UseDeveloperExceptionPage();
             }
 
+            // Register the Swagger generator and the Swagger UI middlewares
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
             app.UseMvc();
+            
         }
     }
 }

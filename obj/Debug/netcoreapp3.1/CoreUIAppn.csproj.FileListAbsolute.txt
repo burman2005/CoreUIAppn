@@ -302,8 +302,6 @@ F:\Repos\CoreAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.
 F:\Repos\CoreAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 F:\Repos\CoreAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 F:\Repos\CoreAPI\obj\Debug\netcoreapp3.1\CoreUIAppn.csprojAssemblyReference.cache
-F:\Repos\CoreAPI\obj\Debug\netcoreapp3.1\CoreUIAppn.csproj.CoreCompileInputs.cache
-F:\Repos\CoreAPI\obj\Debug\netcoreapp3.1\CoreUIAppn.MvcApplicationPartsAssemblyInfo.cache
 F:\Repos\CoreAPI\obj\Debug\netcoreapp3.1\CoreUIAppn.AssemblyInfoInputs.cache
 F:\Repos\CoreAPI\obj\Debug\netcoreapp3.1\CoreUIAppn.AssemblyInfo.cs
 F:\Repos\CoreAPI\obj\Debug\netcoreapp3.1\CoreUIAppn.RazorTargetAssemblyInfo.cache
@@ -313,3 +311,15 @@ F:\Repos\CoreAPI\obj\Debug\netcoreapp3.1\staticwebassets\CoreUIAppn.StaticWebAss
 F:\Repos\CoreAPI\obj\Debug\netcoreapp3.1\CoreUIAppn.dll
 F:\Repos\CoreAPI\obj\Debug\netcoreapp3.1\CoreUIAppn.pdb
 F:\Repos\CoreAPI\obj\Debug\netcoreapp3.1\CoreUIAppn.genruntimeconfig.cache
+F:\Repos\CoreAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+F:\Repos\CoreAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+F:\Repos\CoreAPI\bin\Debug\netcoreapp3.1\Namotion.Reflection.dll
+F:\Repos\CoreAPI\bin\Debug\netcoreapp3.1\NJsonSchema.dll
+F:\Repos\CoreAPI\bin\Debug\netcoreapp3.1\NSwag.Annotations.dll
+F:\Repos\CoreAPI\bin\Debug\netcoreapp3.1\NSwag.AspNetCore.dll
+F:\Repos\CoreAPI\bin\Debug\netcoreapp3.1\NSwag.Core.dll
+F:\Repos\CoreAPI\bin\Debug\netcoreapp3.1\NSwag.Generation.dll
+F:\Repos\CoreAPI\bin\Debug\netcoreapp3.1\NSwag.Generation.AspNetCore.dll
+F:\Repos\CoreAPI\obj\Debug\netcoreapp3.1\CoreUIAppn.csproj.CoreCompileInputs.cache
+F:\Repos\CoreAPI\obj\Debug\netcoreapp3.1\CoreUIAppn.MvcApplicationPartsAssemblyInfo.cs
+F:\Repos\CoreAPI\obj\Debug\netcoreapp3.1\CoreUIAppn.MvcApplicationPartsAssemblyInfo.cache
