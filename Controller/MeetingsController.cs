@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Core3MeetingApplication.Models;
+using CoreUIAppn.Models;
 
 namespace CoreUIAppn.Controller
 {

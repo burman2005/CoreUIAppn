@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Core3MeetingApplication.Models
+namespace CoreUIAppn.Models
 {
     public class Meeting
     {

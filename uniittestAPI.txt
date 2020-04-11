@@ -1,0 +1,23 @@
+http://localhost:55000/user/register
+{UserName: "burman2005", Email: "burman2005@gmail.com", FullName: "Praveen Kumar", Password: "Meeting1978#"}
+
+Access to XMLHttpRequest at 'http://localhost:33000/api/ApplicationUser/Register' from origin 'http://localhost:55000' 
+has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+
+{MeetingId: 0, MeetingSubject: "test subject", Attendees: "Adi", MeetingAgenda: "videocalling", MeetingDate: Fri Apr 10 2020 00:00:00 GMT+0530 (India Standard Time)}
+
+
+http://localhost:33000/api/Meeting
+{
+MeetingId: 0, 
+MeetingSubject: "test subject", 
+Attendees: "Adi", 
+MeetingAgenda: "videocalling", 
+MeetingDate: Fri Apr 10 2020 00:00:00 GMT+0530 (India Standard Time)
+}
+
+l.ProcessRequests[TContext](IHttpApplication`1 application)
+fail: Microsoft.AspNetCore.Server.Kestrel[13]
+      Connection id "0HLURSQCEQ8OP", Request id "0HLURSQCEQ8OP:00000007": An unhandled exception was thrown by the application.
+System.ArgumentNullException: Value cannot be null. (Parameter 'entity')
