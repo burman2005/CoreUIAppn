@@ -24,6 +24,16 @@ namespace CoreUIAppn
 
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy(name: "MyPolicy",
+            //        builder =>
+            //        {
+            //            builder.WithOrigins(Configuration["ApplicationSettings:Client_URL"].ToString())
+            //                   .AllowAnyHeader()
+            //                   .AllowAnyMethod();
+            //        });
+            //});
             services.AddControllers();
             services.AddMvc(option => option.EnableEndpointRouting = false)
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
@@ -45,8 +55,13 @@ namespace CoreUIAppn
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
             app.UseRouting();
-
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            //app.UseCors();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -59,18 +74,6 @@ namespace CoreUIAppn
                     ctx.Response.ContentLength = 0;
                 }
             });
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapGet("/", async context =>
-            //    {
-            //        await context.Response.WriteAsync("Hello World!");
-            //    });
-            //});
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
 
             // Register the Swagger generator and the Swagger UI middlewares
             app.UseOpenApi();
