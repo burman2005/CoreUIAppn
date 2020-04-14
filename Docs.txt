@@ -1,7 +1,7 @@
-SQL connection:DESKTOP-8CLHM2V\SQLEXPRESS
+SQL connection:DESKTOP-8QJT82P\\MSSQLSERVER2019
 
 
-http://localhost:55000/api/meetings
+http://localhost:44000/api/meetings
 ========================================================
 Meeting Management System 
 AppName: MeetingManagementSystem
@@ -21,17 +21,15 @@ http://localhost:33000/api/Meeting/2
 ========================================================
 3. ClientAPI url:
 ========================================================
-http://localhost:55000/home
+http://localhost:55000/
 ========================================================
 4. Github repository:
 ========================================================
-https://github.com/burman2005/Core3MeetingApplication
-https://github.com/burman2005/Core3MeetingApplication.git
+https://github.com/burman2005/JWT-Authentication-Angular9Core3-1
+https://github.com/burman2005/JWT-Authentication-Angular9Core3-1.git
 ========================================================
 
 1. npm install ngx-bootstrap --save
-
-http://localhost:44000/api/Meeting
 
 
 
