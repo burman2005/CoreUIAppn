@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GRfa9KAWkvASfmHcjLKPzYmOwBOzWsV25+hKmb+b584dkPu8uI3tRXmn1EFZ9VpHMhYsQSudLRh6tnUlQ+v9rg==",
+  "dgSpecHash": "YMUCXeYU/ZjZuhQz3iNmub9xKVBik8+VZhaRhdmDJhkpBxbhqvxBFEf59ZSGakS+/Wu8NjHfRh+HJbPZHSJFww==",
   "success": true,
-  "projectFilePath": "F:\\Repos\\DevCode\\JWT-Authentication-Angular9Core3-1\\CoreAPI\\CoreUIAppn.csproj",
+  "projectFilePath": "F:\\Repos\\GitHub\\CoreUIAppn\\CoreUIAppn.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

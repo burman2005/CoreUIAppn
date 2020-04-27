@@ -10717,11 +10717,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Repos\\DevCode\\JWT-Authentication-Angular9Core3-1\\CoreAPI\\CoreUIAppn.csproj",
+      "projectUniqueName": "F:\\Repos\\GitHub\\CoreUIAppn\\CoreUIAppn.csproj",
       "projectName": "CoreUIAppn",
-      "projectPath": "F:\\Repos\\DevCode\\JWT-Authentication-Angular9Core3-1\\CoreAPI\\CoreUIAppn.csproj",
+      "projectPath": "F:\\Repos\\GitHub\\CoreUIAppn\\CoreUIAppn.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "F:\\Repos\\DevCode\\JWT-Authentication-Angular9Core3-1\\CoreAPI\\obj\\",
+      "outputPath": "F:\\Repos\\GitHub\\CoreUIAppn\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
