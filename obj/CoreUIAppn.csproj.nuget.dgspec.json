@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Repos\\GitHub\\CoreUIAppn\\CoreUIAppn.csproj": {}
+    "D:\\GithubRepo\\CoreUIAppn\\CoreUIAppn.csproj": {}
   },
   "projects": {
-    "F:\\Repos\\GitHub\\CoreUIAppn\\CoreUIAppn.csproj": {
+    "D:\\GithubRepo\\CoreUIAppn\\CoreUIAppn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Repos\\GitHub\\CoreUIAppn\\CoreUIAppn.csproj",
+        "projectUniqueName": "D:\\GithubRepo\\CoreUIAppn\\CoreUIAppn.csproj",
         "projectName": "CoreUIAppn",
-        "projectPath": "F:\\Repos\\GitHub\\CoreUIAppn\\CoreUIAppn.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "F:\\Repos\\GitHub\\CoreUIAppn\\obj\\",
+        "projectPath": "D:\\GithubRepo\\CoreUIAppn\\CoreUIAppn.csproj",
+        "packagesPath": "C:\\Users\\PRAVEEN KUMAR\\.nuget\\packages\\",
+        "outputPath": "D:\\GithubRepo\\CoreUIAppn\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PRAVEEN KUMAR\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.Cookies": {
               "target": "Package",
@@ -113,10 +115,29 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.32, 3.1.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -125,7 +146,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
