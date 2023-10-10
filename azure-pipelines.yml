@@ -13,7 +13,12 @@ stages:
            echo $(yamlvar)
            echo $(inputvar)
            echo $(vargroup1)
-          displayName: stage1
+           echo "##vso[task.setvariable variable=yamlvar;]this yaml var is changed"
+          displayName: stage1 step1
+        - script:          
+           echo devstage_getlatest_step1
+           echo $(yamlvar)
+          displayName: stage1 step2
      - job: buildstage
        steps:
         - script:
