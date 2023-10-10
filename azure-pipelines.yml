@@ -1,7 +1,7 @@
 variables:
    - name: yamlvar
      value: "I am yaml variable"
-   - group: somevargroup
+   - group: vargroup
 
 stages:
   - stage: devstage
