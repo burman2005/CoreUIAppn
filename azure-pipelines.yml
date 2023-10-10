@@ -1,3 +1,8 @@
+variables:
+   - name: yamlvar
+     value: "I am yaml variable"
+   - group: somevargroup
+
 stages:
   - stage: devstage
     jobs:
@@ -5,6 +10,9 @@ stages:
        steps:
         - script:          
            echo devstage_getlatest_step1
+           echo $(yamlvar)
+           echo $(inputvar)
+           echo $(vargroup1)
           displayName: stage1
      - job: buildstage
        steps:
