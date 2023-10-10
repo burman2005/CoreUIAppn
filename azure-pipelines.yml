@@ -15,7 +15,7 @@ parameters:
 
 steps:
   - script:
-     echo "Hello $(parameters.environment)"
+     echo "Environment to deploy ${{parameters.environment}}"
      echo "variable group $(var1)"
     displayName: step1
 
