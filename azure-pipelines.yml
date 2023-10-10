@@ -1,22 +1,23 @@
-variables:
- - group: vargroup
- - name: connstr
-   value: test
-
-parameters:
-  - name: environment
-    displayName: Which Environment to deploy?
-    type: string
-    default: 'develop'
-    values:
-    - develop
-    - preproduction
-    - production
-
-steps:
-  - script:
-     echo "Environment to deploy ${{parameters.environment}}"
-     echo "##vso[task.setvariable variable=var1;] var1 value changed from test1"
-     echo "variable group $(var1)"
-    displayName: step1
-
+stages:
+  - stage: devstage
+    jobs:
+     - job: getlatest
+       steps:
+        - script:
+          displayName: stage1
+           echo devstage_getlatest_step1
+     - job: buildstage
+       steps:
+        - script:
+           echo devstage_buildstage_step1
+  - stage: teststage
+    jobs:
+     - job: preparingdata
+       steps:
+        - script:
+          displayName: stage2
+           echo teststage_preparingdata_step1
+     - job: runtestcase
+       steps:
+        - script:
+           echo teststage_runtestcase_step1
