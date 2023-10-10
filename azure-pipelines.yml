@@ -3,6 +3,16 @@ variables:
  - name: connstr
    value: test
 
+parameters:
+  - name: environment
+    displayName: Which Environment to deploy?
+    type: string
+    default: 'develop'
+    values:
+    - develop
+    - preproduction
+    - production
+
 steps:
   - script:
      echo "Hello $(inputvar)"
