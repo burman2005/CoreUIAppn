@@ -6,6 +6,6 @@ variables:
 steps:
   - script:
      echo "Hello $(inputvar)"
-     echo "variable group $(var1)"
+     echo "variable group value $(var1)"
     displayName: step1
 
