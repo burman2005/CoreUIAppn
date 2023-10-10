@@ -3,9 +3,9 @@ stages:
     jobs:
      - job: getlatest
        steps:
-        - script:
-          displayName: stage1
+        - script:          
            echo devstage_getlatest_step1
+          displayName: stage1
      - job: buildstage
        steps:
         - script:
@@ -14,9 +14,9 @@ stages:
     jobs:
      - job: preparingdata
        steps:
-        - script:
-          displayName: stage2
+        - script:          
            echo teststage_preparingdata_step1
+          displayName: stage2
      - job: runtestcase
        steps:
         - script:
