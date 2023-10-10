@@ -1,9 +1,11 @@
 variables:
+ -group: vargroup
  -name: connstr
  value: test
 
 steps:
   - script:
      echo "Hello $(inputvar)"
+     echo "variable group $(var1)"
     displayName: step1
 
