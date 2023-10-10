@@ -1,8 +1,10 @@
+variables:
+ os: windows
 steps:
   - script:
-     echo this is fiest script
+     echo ${{variables.os}} this is fiest script
     displayName: Step1 script
   - script:
      echo this is fiest script
-    displayName: Step1 script
+    displayName: Step2 script
 
