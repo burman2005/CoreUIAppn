@@ -18,7 +18,7 @@ stages:
           name: stage1job1step1
         - script:          
            echo devstage_getlatest_step1
-           echo $(yamlvar)
+           echo $(stage1job1step1.yamlvar)
           displayName: stage1 job1 step2
           name: stage1job1step2
      - job: buildstage
