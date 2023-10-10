@@ -15,7 +15,7 @@ parameters:
 
 steps:
   - script:
-     echo "Hello $(inputvar)"
+     echo "Hello $(parameters.environment)"
      echo "variable group $(var1)"
     displayName: step1
 
