@@ -33,6 +33,8 @@ stages:
   - stage: teststage
     jobs:
      - job: preparingdata
+       variables: 
+        teststagevar1: $[stageDependencies.devstage.getlatest.output['stage1job1step1.yamlvar']]
        steps:
         - script:          
            echo teststage_preparingdata_step1
