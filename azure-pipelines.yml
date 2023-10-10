@@ -36,7 +36,8 @@ stages:
        variables: 
         teststagevar1: $[stageDependencies.devstage.getlatest.output['stage1job1step1.yamlvar']]
        steps:
-        - script:          
+        - script:      
+           echo $(teststagevar1)    
            echo teststage_preparingdata_step1
           displayName: stage2
      - job: runtestcase
