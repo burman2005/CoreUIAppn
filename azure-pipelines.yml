@@ -1,46 +1,66 @@
 variables:
-   - name: yamlvar
-     value: "I am yaml variable"
-   - group: vargroup
+    - group: somevargroup
+    - name: yamlvar
+      value: "hello i am variable from YAML"
+    - name : runtest
+      ${{ if eq( parameters['runstage'], 'buildtest') }}:
+        value: true
+      ${{ else }}:
+        value: false
 
+parameters:
+  - name: runstage
+    type: string
+    default: buildtest
+    values: 
+      - build
+      - buildtest
+  - name: testcases
+    type: string
+    default: test1cases
+    values: 
+      - test1cases
+      - test2cases
+  - name: test1
+    type: boolean
+  - name: test2
+    type: boolean
 stages:
-  - stage: devstage
-    jobs:
-     - job: getlatest
-       steps:
-        - script:          
-           echo devstage_getlatest_step1
-           echo $(yamlvar)
-           echo $(inputvar)
-           echo $(vargroup1)
-           echo "##vso[task.setvariable variable=yamlvar;isOutput=true]this yaml var is changed"
-          displayName: stage1 job1 step1
-          name: stage1job1step1
-        - script:          
-           echo devstage_getlatest_step1
-           echo $(stage1job1step1.yamlvar)
-          displayName: stage1 job1 step2
-          name: stage1job1step2
-     - job: buildstage
-       dependsOn: getlatest
-       variables:
-         buildstagevar: $[dependencies.getlatest.outputs['StepName1.yamlvar']]
-       steps:
-        - script:
-           echo devstage_buildstage_step1
-          displayName: stage1 job2 step1
-          name: stage1job2step1
-  - stage: teststage
-    jobs:
-     - job: preparingdata
-       variables: 
-        teststagevar1: $[stageDependencies.devstage.getlatest.output['stage1job1step1.yamlvar']]
-       steps:
-        - script:      
-           echo $(teststagevar1)    
-           echo teststage_preparingdata_step1
-          displayName: stage2
-     - job: runtestcase
-       steps:
-        - script:
-           echo teststage_runtestcase_step1
+- ${{ if or(eq( parameters['runstage'], 'build' ),eq( parameters['runstage'], 'buildtest')) }} :
+   - stage: teststage
+     jobs:
+      - job : job1
+        displayName: job1
+        steps: 
+          - script: | 
+             echo $(inputvar)
+             echo $(vargroup1)
+             echo $(vargroup2)
+             echo "##vso[task.setvariable variable=vargroup1;isOutput=true]iamchanged"
+             echo $(vargroup1)
+            displayName: teststagestep1
+            name: teststagestep1
+          - script: echo "hello"
+      - job : job2
+        variables:
+           var1: $[ dependencies.job1.outputs['teststagestep1.vargroup1']]
+        displayName: job2
+        dependsOn: job1
+        steps: 
+          - script: | 
+              echo "Started with second step"
+              echo $(var1)
+     displayName: testStage
+- ${{ if eq( parameters['runstage'], 'buildtest' ) }} :
+   - stage: buildstage
+     dependsOn: teststage
+     jobs:
+       - job : 
+         variables:
+            var123: $[stageDependencies.teststage.job1.outputs['teststagestep1.vargroup1'] ]
+         displayName: job1
+         steps: 
+           - script: 
+              echo "Started with buildstage job1"
+              echo "$(var123)"
+     displayName: testStage
