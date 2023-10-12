@@ -1,36 +1,66 @@
-# ASP.NET Core (.NET Framework)
-# Build and test ASP.NET Core projects targeting the full .NET Framework.
-# Add steps that publish symbols, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
-trigger:
-- master
-
-pool:
-  vmImage: 'windows-latest'
-
 variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
+    - group: somevargroup
+    - name: yamlvar
+      value: "hello i am variable from YAML"
+    - name : runtest
+      ${{ if eq( parameters['runstage'], 'buildtest') }}:
+        value: true
+      ${{ else }}:
+        value: false
 
-steps:
-- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
-
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
-- task: PublishBuildArtifacts@1
+parameters:
+  - name: runstage
+    type: string
+    default: buildtest
+    values: 
+      - build
+      - buildtest
+  - name: testcases
+    type: string
+    default: test1cases
+    values: 
+      - test1cases
+      - test2cases
+  - name: test1
+    type: boolean
+  - name: test2
+    type: boolean
+stages:
+- ${{ if or(eq( parameters['runstage'], 'build' ),eq( parameters['runstage'], 'buildtest')) }} :
+   - stage: teststage
+     jobs:
+      - job : job1
+        displayName: job1
+        steps: 
+          - script: | 
+             echo $(inputvar)
+             echo $(vargroup1)
+             echo $(vargroup2)
+             echo "##vso[task.setvariable variable=vargroup1;isOutput=true]iamchanged"
+             echo $(vargroup1)
+            displayName: teststagestep1
+            name: teststagestep1
+          - script: echo "hello"
+      - job : job2
+        variables:
+           var1: $[ dependencies.job1.outputs['teststagestep1.vargroup1']]
+        displayName: job2
+        dependsOn: job1
+        steps: 
+          - script: | 
+              echo "Started with second step"
+              echo $(var1)
+     displayName: testStage
+- ${{ if eq( parameters['runstage'], 'buildtest' ) }} :
+   - stage: buildstage
+     dependsOn: teststage
+     jobs:
+       - job : 
+         variables:
+            var123: $[stageDependencies.teststage.job1.outputs['teststagestep1.vargroup1'] ]
+         displayName: job1
+         steps: 
+           - script: 
+              echo "Started with buildstage job1"
+              echo "$(var123)"
+     displayName: testStage
